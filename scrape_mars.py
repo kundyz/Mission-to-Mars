@@ -20,9 +20,7 @@ def scrape():
     soup = BeautifulSoup(html, 'html.parser')
 
     news_title = soup.find('div', class_='content_title').text
-    news_paragraph = soup.find('div', class_='article_teaser_body')
-    print(news_paragraph)
-    news_paragraph = news_paragraph.text
+    news_paragraph = soup.find('div', class_='article_teaser_body').text
     mars_data["news_title"] = news_title
     mars_data["news_paragraph"] = news_paragraph
 

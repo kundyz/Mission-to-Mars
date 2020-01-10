@@ -22,3 +22,5 @@ Task
 * Create a template HTML file called index.html that will take the mars data dictionary and display all of the data in the appropriate HTML elements. Use the following as a guide for what the final product should look like, but feel free to create your own design.
 
 Output
+
+![logo](/images/FinalApp.png)

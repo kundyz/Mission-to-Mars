@@ -6,8 +6,8 @@ from splinter import Browser
 from selenium import webdriver
 
 def init_browser():
-    executable_path = {'executable_path': 'chromedriver'}
-    return Browser('chrome', **executable_path, headless=False)
+    # executable_path = {'executable_path': 'chromedriver'}
+    return Browser('chrome', headless=True)
 
 def scrape():
     browser = init_browser()

@@ -23,5 +23,5 @@ Task
 
 Output
 
-![logo](/images/WebImage.png)
+![logo](/images/WebImage.PNG)
 ![logo](/images/MarsHemispheres.png)

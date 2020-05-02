@@ -12,7 +12,7 @@ def init_browser():
 def scrape():
     browser = init_browser()
     mars_data = {}
-    
+
     # NASA mars news
     url = "https://mars.nasa.gov/news/"
     browser.visit(url)
@@ -87,6 +87,6 @@ def scrape():
         browser.back()
     mars_data['mars_hemispheres'] = mars_hemispheres
     print(mars_data)
-    
+
     return mars_data
     

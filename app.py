@@ -1,6 +1,6 @@
 import sys
-from flask_pymongo import PyMongo
 import scrape_mars
+from flask_pymongo import PyMongo
 from flask import Flask, render_template, jsonify, redirect
 
 app = Flask(__name__)

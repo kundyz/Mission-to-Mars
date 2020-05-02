@@ -11,48 +11,46 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-        <div clas="container">
-                <div class="jumbotron">
-                    <h1 align="center">Mission to Mars</h1>
-                    <p align="Center">
-                        <a class="btn btn-primary btn-lg" href="#" role="button">Scrape New Data</a>
-                    </p>
-                </div>
-                <div class="page-header">
-                    <h1>Latest Mars News</h1>
-                </div>
-        </div>  
-                <div class="container-fluid">
-                    <h2>{{mars_data.news_title}}</h2>
-                    <p>{{mars_data.news_paragraph}}</p>
-                </div>
-                <div class="container-fluid">
+    <div clas="container">
+        <div class="jumbotron">
+            <h1 align="center">Mission to Mars</h1>
+            <p align="center">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Scrape New Data</a>
+            </p>
+        </div>    
+    </div>
+    <div class="container-fluid">
+            <h1>Latest Mars News</h1>
+            <h2>{{mars_data.news_title}}</h2>
+            <p>{{mars_data.news_paragraph}}</p>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-7">
+                <h3>Featured Mars Image</h3>
+                <img src="{{mars_data.featured_image_url}}" alt="featured image" style="width: 80%;">
+            </div>
+            <div class="col-md-5">
+                <!-- <ul>
+                    <h3>Current Weather on Mars</h3>
+                    {{mars_data.mars_weather}}
+                </ul> -->
+                <ul>
+                    <h3>Mars Facts</h3>
+                    {{mars_data.mars_table|safe}}
+                    <a href="{{mars_data.mars_table}}"></a>
+                </ul>
+            </div>
+        </div>                 
+    </div>
+    <div class="container-fluid">
+            <h3 align="center">Mars Hemispheres</h3>
+                <div class="body">
                     <div class="row">
-                        <div class="col-md-7">
-                            <h3>Featured Mars Image</h3>
-                            <img src="{{mars_data.featured_image_url}}" alt="featured image" style="width: 80%;">
-                        </div>
-                        <div class="col-md-5">
-                            <ul>
-                                <h3>Current Weather on Mars</h3>
-                                {{mars_data.mars_weather}}
-                            </ul>
-                            <ul>
-                                <h3>Mars Facts</h3>
-                                {{mars_data.mars_table|safe}}
-                                <a href="{{mars_data.mars_table}}"></a>
-                            </ul>
-                        </div>
-                    </div>                 
-                </div>
-                <div class="container-fluid">
-                    <H3 align="center">Mars Hemispheres</H3>
-                    <div class="body">
-                    <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6" align="right">
                             {% for hemisphere in mars_data.mars_hemispheres[0:2] %}
                             <img src="{{hemisphere['four_images_url']}}" alt="hemisphere" style="width:50%;">
-                            <div class="caption"style="font-weight: bold;">
+                            <div class="caption" style="font-weight: bold;">
                                 {{hemisphere['title']}}
                             </div>                                           
                             {% endfor %}
@@ -66,9 +64,7 @@
                             {% endfor %}
                         </div>
                     </div>
-                    </div>
                 </div>                    
-            </div>    
-        </div>    
+    </div>    
 </body>
 </html>

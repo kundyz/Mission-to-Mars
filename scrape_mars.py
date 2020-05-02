@@ -19,8 +19,9 @@ def scrape():
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
 
-    news_title = soup.find('div', class_='content_title').text
-    news_paragraph = soup.find('div', class_='article_teaser_body').text
+    list_text = soup.find('div', class_='list_text')
+    news_title = list_text.find('div', class_='content_title').text
+    news_paragraph = list_text.find('div', class_='article_teaser_body').text
     mars_data["news_title"] = news_title
     mars_data["news_paragraph"] = news_paragraph
 
@@ -35,12 +36,12 @@ def scrape():
     mars_data["featured_image_url"] = featured_image_url
 
     # Mars weather
-    weather_url = 'https://twitter.com/marswxreport?lang=en'
-    browser.visit(weather_url)
-    weather_html = browser.html
-    weather_soup = BeautifulSoup(weather_html, 'html.parser')
+    # weather_url = 'https://twitter.com/marswxreport?lang=en'
+    # browser.visit(weather_url)
+    # weather_html = browser.html
+    # weather_soup = BeautifulSoup(weather_html, 'html.parser')
 
-    weather_info = weather_soup.find('div')
+    # weather_info = weather_soup.find('div')
     # mars_weather = weather_info.find('p', class_='tweet-text').text
     # mars_data["mars_weather"] = mars_weather
 
@@ -85,6 +86,7 @@ def scrape():
         mars_hemispheres.append(images_dic)
         browser.back()
     mars_data['mars_hemispheres'] = mars_hemispheres
+    print(mars_data)
     
     return mars_data
     
